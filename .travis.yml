@@ -16,10 +16,9 @@ after_success:
     -docker build -t seedbg/multi-worker ./worker
 
 #login to docker
-- "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --passwordsstdin
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 #push to dockerhub
-- docker push seedbg/multi-client
-- docker push seedbg/multi-nginx
-- docker push seedbg/multi-server
-- docker push seedbg/multi-worker
-#new commit
+    - docker push seedbg/multi-client
+    - docker push seedbg/multi-nginx
+    - docker push seedbg/multi-server
+    - docker push seedbg/multi-worker
