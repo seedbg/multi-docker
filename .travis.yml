@@ -22,3 +22,4 @@ after_success:
 - docker push seedbg/multi-nginx
 - docker push seedbg/multi-server
 - docker push seedbg/multi-worker
+#new commit
