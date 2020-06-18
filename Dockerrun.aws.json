@@ -1,0 +1,41 @@
+{
+  "AWSEBDockerrunVersion":2,
+  "containerDefinitions": [
+      {
+          "name": "client",
+          "image": "seedbg/multi-client",
+          "hostname": "client",
+          "esential": false
+      },
+      {
+        "name": "server",
+        "image": "seedbg/multi-server",
+        "hostname": "api",
+        "esential": false
+      },
+      {
+        "name": "worker",
+        "image": "seedbg/multi-worker",
+        "hostname": "worker",
+        "esential": false
+      },
+      {
+          "name": "nginx",
+          "image": "seedbg/multi-nginx",
+          "hostname": "nginx",
+          "essential": true ,
+          "portMappings": [
+              {
+              "hostport": 80, 
+              "containerPort": 80
+              }
+          ],
+          "links" : ["client","server"]
+      }
+  ]
+
+
+
+
+
+}

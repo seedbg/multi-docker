@@ -22,3 +22,14 @@ after_success:
     - docker push seedbg/multi-nginx
     - docker push seedbg/multi-server
     - docker push seedbg/multi-worker
+deploy:
+    provider: elasticbeanstalk
+    region: eu-central-1
+    app: multi-dockerenv: MultiDOcker-env
+    bucket_name: elasticbeanstalk-eu-central-1-106127078530
+    bucket_path: docker-multi
+    on:
+        brach: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    
