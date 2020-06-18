@@ -29,7 +29,6 @@ deploy:
     bucket_name: elasticbeanstalk-eu-central-1-106127078530
     bucket_path: docker-multi
     on:
-        brach: master
+        branch: master
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
-    
